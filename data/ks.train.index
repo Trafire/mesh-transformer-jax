@@ -1,1 +1,1 @@
-gs://your-bucket/datasets/your.tfrecords
+gs://ks-story-ew4-storage/datasets/train/kstory_11.tfrecords
