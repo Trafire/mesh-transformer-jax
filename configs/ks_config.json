@@ -20,7 +20,7 @@
   "bucket": "ks-story-ew4-storage",
   "model_dir": "/content/drive/MyDrive/models",
   "train_set": "ks.train.index",
-  "val_set": {f
+  "val_set": {
     "pile": "ks.eval.index",
     "owt": "openwebtext2_new_inputs.val.index"
   },
