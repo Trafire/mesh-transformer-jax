@@ -89,8 +89,9 @@ print(infer("EleutherAI is")[0])
 
 
 top_p = 0.9 #@param {type:"slider", min:0, max:1, step:0.1}
-temp = 1 #@param {type:"slider", min:0, max:1, step:0.1}
+temp = .9 #@param {type:"slider", min:0, max:1, step:0.1}
 
-context = """In a shocking finding, scientist discovered a herd of unicorns living in a remote, previously unexplored valley, in the Andes Mountains. Even more surprising to the researchers was the fact that the unicorns spoke perfect English."""
 
-print(infer(top_p=top_p, temp=temp, gen_len=512, context=context)[0])
+for i in range(10):
+    context = """In a shocking finding, scientist discovered a herd of unicorns living in a remote, previously unexplored valley, in the Andes Mountains. Even more surprising to the researchers was the fact that the unicorns spoke perfect English."""
+    print(infer(top_p=top_p, temp=temp, gen_len=512, context=context)[0])
