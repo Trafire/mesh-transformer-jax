@@ -9,7 +9,7 @@
   "seq": 2048,
   "cores_per_replica": 8,
   "per_replica_batch": 1,
-  "gradient_accumulation_steps": 16,
+  "gradient_accumulation_steps": 32,
   "warmup_steps": 3000,
   "anneal_steps": 300000,
   "lr": 0.00012,
@@ -21,8 +21,7 @@
   "model_dir": "/content/drive/MyDrive/models",
   "train_set": "ks.train.index",
   "val_set": {
-    "pile": "ks.eval.index",
-    "owt": "openwebtext2_new_inputs.val.index"
+    "ks": "ks.eval.index"
   },
   "eval_harness_tasks": [
     "lambada",
@@ -34,9 +33,9 @@
   ],
   "val_batches": 100,
   "val_every": 500,
-  "ckpt_every": 500,
+  "ckpt_every":"Any",
+  "keep_n": 3,
   "keep_every": 10000,
   "name": "KS_STORY",
-  "wandb_project": "mesh-transformer-jax",
   "comment": ""
 }
