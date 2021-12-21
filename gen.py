@@ -4,6 +4,7 @@ from jax.config import config
 
 colab_tpu_addr = os.environ['COLAB_TPU_ADDR'].split(':')[0]
 url = f'http://{colab_tpu_addr}:8475/requestversion/tpu_driver0.1_dev20210607'
+print(url)
 requests.post(url)
 
 # The following is required to use TPU Driver as JAX's backend.
