@@ -63,6 +63,8 @@ network.state = read_ckpt_lowmem(network.state, "step_383500/", devices.shape[1]
 network.state = network.move_xmap(network.state, np.zeros(cores_per_replica))
 
 
+
+
 def infer(context, top_p=0.9, temp=1.0, gen_len=512):
     tokens = tokenizer.encode(context)
 
@@ -85,13 +87,13 @@ def infer(context, top_p=0.9, temp=1.0, gen_len=512):
     print(f"completion done in {time.time() - start:06}s")
     return samples
 
-print(infer("EleutherAI is")[0])
-
-
-top_p = 0.9 #@param {type:"slider", min:0, max:1, step:0.1}
-temp = .9 #@param {type:"slider", min:0, max:1, step:0.1}
-
-
-for i in range(10):
-    context = """In a shocking finding, scientist discovered a herd of unicorns living in a remote, previously unexplored valley, in the Andes Mountains. Even more surprising to the researchers was the fact that the unicorns spoke perfect English."""
-    print(infer(top_p=top_p, temp=temp, gen_len=512, context=context)[0])
+# print(infer("EleutherAI is")[0])
+#
+#
+# top_p = 0.9 #@param {type:"slider", min:0, max:1, step:0.1}
+# temp = .9 #@param {type:"slider", min:0, max:1, step:0.1}
+#
+#
+# for i in range(10):
+#     context = """In a shocking finding, scientist discovered a herd of unicorns living in a remote, previously unexplored valley, in the Andes Mountains. Even more surprising to the researchers was the fact that the unicorns spoke perfect English."""
+#     print(infer(top_p=top_p, temp=temp, gen_len=512, context=context)[0])
