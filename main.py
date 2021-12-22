@@ -22,6 +22,7 @@ while True:
         version = json_data['version']
         prompt = get_prompt(bucket_name, story_name)
         for i in range(10):
+            print(prompt, type(prompt))
             data = infer(top_p=top_p, temp=temp, gen_len=512, context=prompt)
 
             prompt += data[0]
