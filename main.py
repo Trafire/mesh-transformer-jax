@@ -1,6 +1,5 @@
 import uuid
-
-
+from gen import infer
 import store
 import os
 
@@ -23,7 +22,7 @@ while True:
         prompt = get_prompt(bucket_name, story_name)
         for i in range(10):
             print(prompt, type(prompt))
-            from gen import infer
+
             data = infer(top_p=top_p, temp=temp, gen_len=512, context=prompt)
 
             prompt += data[0]
