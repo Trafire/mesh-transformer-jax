@@ -44,8 +44,8 @@ while True:
             print("data", data)
             story += data[0]
             print(prompt)
-            directory = f"kindle_books/stories/{story_name}/drafts/version {version}/"
-            filename = str(uuid.uuid4()) + ".txt"
-            filepath = directory + filename
-            print(f"saving to {filepath}")
-            store.write_file(bucket_name, filepath, ftfy.fix_text(story))
+        directory = f"kindle_books/stories/{story_name}/drafts/version {version}/"
+        filename = str(uuid.uuid4()) + ".txt"
+        filepath = directory + filename
+        print(f"saving to {filepath}")
+        store.write_file(bucket_name, filepath, ftfy.fix_text(story))
