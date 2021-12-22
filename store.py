@@ -15,9 +15,11 @@ def get_text_file(bucket, filepath):
         return f.read()
 
 
-def get_json(bucket, filepath):
-    with open(f"gs://{bucket}/{filepath}", "r") as f:
-        return json.load(f)
+def get_json(bucket_name, filepath):
+    client = storage.Client()
+    bucket = client.get_bucket(bucket_name)
+    blob = bucket.get_blob(filepath)
+    return json.loads(blob.download_as_string())
 
 def get_file_list(bucket, prefix):
     client = storage.Client()
