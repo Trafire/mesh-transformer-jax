@@ -21,4 +21,4 @@ def get_json(bucket, filepath):
 
 def get_file_list(bucket, prefix):
     client = storage.Client()
-    return [str(x) for x in client.list_blobs(bucket, prefix=prefix)]
+    return [x.name for x in client.list_blobs(bucket, prefix=prefix)]
