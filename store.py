@@ -39,7 +39,3 @@ def get_file_list(bucket, prefix):
     client = storage.Client()
     return [x.name for x in client.list_blobs(bucket, prefix=prefix)]
 
-
-store.get_json('ks-stories',
-
-               get_json(bucket, 'kindle_books/data/Behemoth Rising.json'))
