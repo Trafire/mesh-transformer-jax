@@ -5,7 +5,7 @@ import store
 import os
 
 def get_prompt(bucket_name, story_name):
-    filepath =f"kindle books/stories/{story_name}/confirmed.txt"
+    filepath =f"kindle_books/stories/{story_name}/confirmed.txt"
     return store.get_text_file(bucket_name, filepath)
 
 
