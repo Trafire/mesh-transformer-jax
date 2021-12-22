@@ -1,12 +1,12 @@
 import uuid
 
-from gen import infer
+
 import store
 import os
 
 def get_prompt(bucket_name, story_name):
     filepath =f"kindle_books/stories/{story_name}/confirmed.txt"
-    return store.get_text_file(bucket_name, filepath)
+    return str(store.get_text_file(bucket_name, filepath))
 
 
 bucket_name = 'ks-stories'
@@ -23,6 +23,7 @@ while True:
         prompt = get_prompt(bucket_name, story_name)
         for i in range(10):
             print(prompt, type(prompt))
+            from gen import infer
             data = infer(top_p=top_p, temp=temp, gen_len=512, context=prompt)
 
             prompt += data[0]
