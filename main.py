@@ -23,12 +23,13 @@ while True:
         prompt = get_prompt(bucket_name, story_name)
         for i in range(10):
             data = infer(top_p=top_p, temp=temp, gen_len=512, context=prompt)
-            print(data)
+
             prompt += data[0]
-            directory = "kindle books/stories/{story_name}/drafts/version {version}/"
+            print(prompt)
+            directory = f"kindle books/stories/{story_name}/drafts/version {version}/"
             filename = str(uuid.uuid4()) + ".txt"
             filepath = directory + filename
-            print(f"saveing to {filepath}")
+            print(f"saving to {filepath}")
             store.write_file(bucket_name, filepath, prompt)
 
 
