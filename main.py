@@ -2,10 +2,11 @@ import uuid
 from gen import infer
 import store
 import os
+import ftfy
 
 def get_story(bucket_name, story_name):
     filepath =f"kindle_books/stories/{story_name}/confirmed.txt"
-    return store.get_text_file(bucket_name, filepath).decode('ASCII')
+    return ftfy.fix_text(store.get_text_file(bucket_name, filepath).decode('UTF-8'))
 
 def find_nth(s, x, n):
     i = -1
@@ -22,7 +23,7 @@ def get_prompt(prompt, n):
     if target_index < 1:
         return prompt
     index = find_nth(prompt, ' ', target_index)
-    return prompt[index:]
+    return ftfy.fix_text(prompt[index:])
 
 
 bucket_name = 'ks-stories'
@@ -47,4 +48,4 @@ while True:
             filename = str(uuid.uuid4()) + ".txt"
             filepath = directory + filename
             print(f"saving to {filepath}")
-            store.write_file(bucket_name, filepath, story)
+            store.write_file(bucket_name, filepath, ftfy.fix_text(story))
