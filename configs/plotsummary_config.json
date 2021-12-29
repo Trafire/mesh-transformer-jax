@@ -27,5 +27,7 @@
   "keep_n": 3,
   "keep_every": 10000,
   "name": "PlotSummary",
-  "comment": ""
+  "comment": "",
+    "eval_harness_tasks": [
+  ]
 }
