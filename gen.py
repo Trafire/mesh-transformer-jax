@@ -1,15 +1,16 @@
 import os
 import requests
 from jax.config import config
+import socket
 
-colab_tpu_addr = os.environ['COLAB_TPU_ADDR'].split(':')[0]
-url = f'http://{colab_tpu_addr}:8475/requestversion/tpu_driver0.1_dev20210607'
+tpu_address = socket.gethostbyname(socket.gethostname())
+url = f'http://{tpu_address}:8475/requestversion/tpu_driver0.1_dev20210607'
 print(url)
 requests.post(url)
 
 # The following is required to use TPU Driver as JAX's backend.
 config.FLAGS.jax_xla_backend = "tpu_driver"
-config.FLAGS.jax_backend_target = "grpc://" + os.environ['COLAB_TPU_ADDR']
+config.FLAGS.jax_backend_target = "grpc://" + tpu_address
 
 import time
 
