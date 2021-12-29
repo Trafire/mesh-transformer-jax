@@ -20,14 +20,16 @@
   "bucket": "ks-story-ew4-storage",
   "model_dir": "models/plot_summary",
   "train_set": "plotsummary.train.index",
-  "val_set":   "plotsummary.val.index",
+  "val_set": {
+    "plotsummary": "plotsummary.val.index"
+  },
   "val_batches": 698,
   "val_every": 500,
-  "ckpt_every":"Any",
+  "ckpt_every": "Any",
   "keep_n": 3,
   "keep_every": 10000,
   "name": "PlotSummary",
   "comment": "",
-    "eval_harness_tasks": [
+  "eval_harness_tasks": [
   ]
 }
