@@ -24,9 +24,9 @@
     "plotsummary": "plotsummary.val.index"
   },
   "val_batches": 698,
-  "val_every": 500,
-  "ckpt_every": 1000,
-  "keep_n": 3,
+  "val_every": 1396,
+  "ckpt_every": 2000,
+  "keep_n": 2,
   "keep_every": 5000,
   "name": "PlotSummary",
   "comment": "",
