@@ -154,7 +154,7 @@ if __name__ == "__main__":
 
     val_batches = params["val_batches"]
     val_every = params["val_every"]
-    ckpt_every = params["ckpt_every"]
+    ckpt_every = int(params["ckpt_every"])
     keep_every = params["keep_every"]
     eval_tasks = params["eval_harness_tasks"]
     total_steps = params["total_steps"]
