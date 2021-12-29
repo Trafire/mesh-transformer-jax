@@ -18,7 +18,7 @@
   "total_steps": 12000,
   "tpu_size": 8,
   "bucket": "ks-story-ew4-storage",
-  "model_dir": "models/plot_summary",
+  "model_dir": "models/plot_summary2",
   "train_set": "plotsummary.train.index",
   "val_set": {
     "plotsummary": "plotsummary.val.index"
