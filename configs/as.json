@@ -33,9 +33,9 @@
   ],
   "val_batches": 8922,
   "val_every": 1302,
-  "ckpt_every":2604,
+  "ckpt_every":100,
   "keep_n": 3,
-  "keep_every": 2000,
+  "keep_every": 100,
   "name": "AS_STORY",
   "comment": ""
 }
